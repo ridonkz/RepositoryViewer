@@ -1,3 +1,6 @@
+/* 
+ Main component to display list of repositories
+*/
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -26,6 +29,7 @@ export default class App extends Component {
       .catch(err => console.log(err));
   }
 
+  /* Making a call to the server side route to get list of repositories */
   listGitRepository = async () => {
     const response = await fetch('/api/list-repos');
     const body = await response.json();
@@ -34,7 +38,7 @@ export default class App extends Component {
     return body;
   };
 
-
+  /* Making a call to the server side route to get list of commits */
   getCommits = async (e) => {
     const response = await fetch(`/api/commits/${e.name}`);
     const body = await response.json();
@@ -88,6 +92,7 @@ export default class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Netflix Repositories</h1>
         </header>
+        // display a loader while the state is empty
         {(this.state.repositories.length === 0 ) ? this.renderLoader() : this.renderList()}
         <CommitList ref={(ref) => this.commitList = ref} 
           show={this.state.show}

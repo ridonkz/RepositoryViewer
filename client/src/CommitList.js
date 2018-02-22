@@ -1,3 +1,6 @@
+/* 
+  Child component to display list of commits
+*/
 import React, { Component } from 'react';
 import './App.css';
 import Modal from 'react-bootstrap/lib/Modal';
