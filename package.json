@@ -1,0 +1,21 @@
+{
+  "name": "repository-viewer",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "moment": "^2.20.1",
+    "react-bootstrap": "^0.32.1",
+    "react-bootstrap-table": "^4.3.1",
+    "react-spinners": "^0.2.6",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  }
+}
